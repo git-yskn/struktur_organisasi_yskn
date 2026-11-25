@@ -26,60 +26,46 @@
         }
     </script>
 </head>
-<body class="bg-slate-100 dark:bg-[#070b14] text-slate-900 dark:text-white min-h-screen flex items-center justify-center p-3.5 sm:p-5 transition-colors duration-300 font-sans antialiased selection:bg-emerald-400 selection:text-slate-950">
+<body class="bg-slate-100 dark:bg-[#070b14] text-slate-900 dark:text-white min-h-screen py-6 px-3.5 sm:px-6 transition-colors duration-300 font-sans antialiased selection:bg-emerald-400 selection:text-slate-950">
 
-    <!-- Notifikasi Toast -->
-    <div id="toast-notification" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-[70] flex items-center gap-2 bg-emerald-400 text-slate-950 font-bold px-4 py-2 rounded-full shadow-xl opacity-0 pointer-events-none transition-all duration-300 translate-y-3">
-        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-        </svg>
-        <span id="toast-message" class="text-[11px] whitespace-nowrap">Berhasil disalin!</span>
-    </div>
-
-    <!-- CONTAINER UTAMA -->
-    <main class="w-full max-w-[440px] bg-white dark:bg-[#0f1624] rounded-[26px] shadow-2xl shadow-slate-300/60 dark:shadow-black/70 border border-slate-200/80 dark:border-slate-800/80 overflow-hidden transition-colors duration-300">
-
-        <!-- HEADER BANNER -->
-        <div class="relative bg-slate-900 overflow-hidden">
+    <div class="max-w-5xl mx-auto">
+        <!-- HEADER YAYASAN & IDENTITAS SK -->
+        <header class="relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-200/80 dark:border-slate-800/80 shadow-xl mb-6">
             <img
                 src="https://i.pinimg.com/736x/82/b1/48/82b148e99cc89ae9190477670a40e09f.jpg"
-                onerror="this.onerror=null; this.src='https://placehold.co/900x420/0f1624/10b981?text=YSKN';"
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x360/0f1624/10b981?text=Sahabat+Kemanusiaan+Nusantara';"
                 alt="Latar Belakang Yayasan"
-                class="w-full h-[168px] object-cover object-center opacity-45"
+                class="w-full h-44 sm:h-48 object-cover object-center opacity-45"
             >
-            <div class="absolute inset-0 bg-gradient-to-b from-[#0f1624]/65 via-[#0f1624]/60 to-[#0f1624]"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-[#0f1624]/65 via-[#0f1624]/75 to-[#0f1624]"></div>
 
-            <div class="relative z-10 -mt-[168px] p-4 sm:p-5">
-                <div class="flex items-start justify-between gap-2.5">
-                    <!-- Logo Proporsional & Utuh -->
-                    <div class="w-11 h-11 rounded-2xl bg-white/95 border border-white/25 p-1.5 flex items-center justify-center shrink-0 shadow-lg overflow-hidden">
-                        <img
-                            src="https://i.pinimg.com/736x/62/a0/b7/62a0b71fb690efc8fb3d6590f179163c.jpg"
-                            onerror="this.onerror=null; this.src='https://placehold.co/120x120/ffffff/0f1624?text=YSKN';"
-                            alt="Logo Yayasan Sahabat Kemanusiaan Nusantara"
-                            class="w-full h-full object-contain rounded-xl"
-                        >
+            <div class="absolute inset-0 p-4 sm:p-6 flex flex-col justify-between">
+                <div class="flex items-start justify-between gap-3">
+                    <div class="flex items-center gap-3 min-w-0">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-white/95 backdrop-blur-md border border-white/25 p-1.5 flex items-center justify-center shrink-0 shadow-lg overflow-hidden">
+                            <img
+                                src="https://i.pinimg.com/736x/62/a0/b7/62a0b71fb690efc8fb3d6590f179163c.jpg"
+                                onerror="this.onerror=null; this.src='https://placehold.co/120x120/ffffff/0f1624?text=YSKN';"
+                                alt="Logo Yayasan Sahabat Kemanusiaan Nusantara"
+                                class="w-full h-full object-contain rounded-xl"
+                            >
+                        </div>
+                        <div class="min-w-0">
+                            <p class="text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.08em] text-amber-400">
+                                STRUKTUR ORGANISASI RESMI
+                            </p>
+                            <h1 class="text-[14px] sm:text-[18px] font-extrabold uppercase tracking-tight text-white leading-tight mt-0.5 truncate">
+                                YAYASAN SAHABAT KEMANUSIAAN NUSANTARA
+                            </h1>
+                        </div>
                     </div>
 
-                    <!-- Identitas & Legalitas -->
-                    <div class="flex-1 min-w-0">
-                        <p class="text-[9.5px] font-bold uppercase tracking-[0.07em] text-amber-400 leading-tight">
-                            STRUKTUR ORGANISASI RESMI
-                        </p>
-                        <h1 class="text-[13.5px] sm:text-[14.5px] font-extrabold uppercase tracking-tight text-white leading-[1.2] mt-0.5">
-                            YAYASAN SAHABAT KEMANUSIAAN NUSANTARA
-                        </h1>
-                        <p class="text-[10.5px] text-slate-300 mt-1 leading-snug">
-                            SK Kemenkumham: <span class="font-semibold text-emerald-300">AHU-0021213.AH.01.04.Tahun 2026</span>
-                        </p>
-                    </div>
-
-                    <!-- Tombol Tema -->
+                    <!-- Tombol Toggle Tema -->
                     <button
                         id="theme-toggle"
                         type="button"
                         aria-label="Ubah Tema"
-                        class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/15 flex items-center justify-center shrink-0 transition-all active:scale-95">
+                        class="w-10 h-10 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/15 flex items-center justify-center shrink-0 transition-all active:scale-95">
                         <svg class="w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                         </svg>
@@ -89,105 +75,285 @@
                     </button>
                 </div>
 
-                <!-- Ringkasan Singkat Legalitas -->
-                <div class="grid grid-cols-2 gap-2 mt-3.5">
-                    <div class="px-3 py-2 rounded-xl bg-white/5 border border-white/10">
-                        <p class="text-[9.5px] text-slate-400">Kekayaan Awal</p>
-                        <p class="text-[11.5px] font-bold text-emerald-400 mt-0.5">Rp 10.000.000</p>
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-[10.5px] sm:text-[11.5px] text-slate-300">
+                    <span>SK Kemenkumham: <strong class="text-white font-semibold">AHU-0021213.AH.01.04.Tahun 2026</strong></span>
+                    <span class="hidden sm:inline text-slate-500">•</span>
+                    <span>Daftar Yayasan: <strong class="text-emerald-400 font-semibold">AHU-0036477.AH.01.12.Tahun 2026</strong></span>
+                    <span class="hidden sm:inline text-slate-500">•</span>
+                    <span>Kekayaan Awal: <strong class="text-amber-400 font-semibold">Rp 10.000.000</strong></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- NAVIGASI FILTER BAGIAN -->
+        <nav aria-label="Filter Struktur Organisasi" class="flex flex-wrap items-center gap-2 mb-6">
+            <button type="button" data-filter="all" onclick="setFilter('all')" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-emerald-400 text-slate-950 shadow-sm transition-all">
+                Semua Bagian
+            </button>
+            <button type="button" data-filter="pendiri" onclick="setFilter('pendiri')" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all">
+                Pendiri Yayasan
+            </button>
+            <button type="button" data-filter="pembina" onclick="setFilter('pembina')" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all">
+                Pembina
+            </button>
+            <button type="button" data-filter="pengurus" onclick="setFilter('pengurus')" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all">
+                Pengurus
+            </button>
+            <button type="button" data-filter="pengawas" onclick="setFilter('pengawas')" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all">
+                Pengawas
+            </button>
+        </nav>
+
+        <!-- BAGAN STRUKTUR ORGANISASI (HIERARKI VISUAL) -->
+        <section id="bagan-hierarki" class="bg-white dark:bg-[#0f1624] rounded-3xl border border-slate-200/80 dark:border-slate-800/80 p-4 sm:p-6 shadow-lg mb-7">
+            <div class="flex items-center justify-between gap-2 pb-4 border-b border-slate-200/80 dark:border-slate-800">
+                <div>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.08em] text-emerald-500">Bagan Hierarki</p>
+                    <h2 class="text-[15px] sm:text-[17px] font-extrabold text-slate-900 dark:text-white mt-0.5">Susunan Organ & Pendiri Yayasan</h2>
+                </div>
+                <span class="text-[10.5px] font-semibold px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30">
+                    Ditetapkan 12 Oktober 2026
+                </span>
+            </div>
+
+            <!-- Baris 1: Pembina & Pengawas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+                <div class="rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10.5px] font-extrabold uppercase tracking-wider text-amber-500">Organ Pembina</span>
+                        <span class="text-[10.5px] font-semibold text-slate-500 dark:text-slate-400">2 Personel</span>
                     </div>
-                    <div class="px-3 py-2 rounded-xl bg-white/5 border border-white/10">
-                        <p class="text-[9.5px] text-slate-400">Ditetapkan</p>
-                        <p class="text-[11.5px] font-bold text-amber-300 mt-0.5">12 Oktober 2026</p>
+                    <div id="hierarki-pembina" class="space-y-2.5"></div>
+                </div>
+
+                <div class="rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10.5px] font-extrabold uppercase tracking-wider text-sky-500">Organ Pengawas</span>
+                        <span class="text-[10.5px] font-semibold text-slate-500 dark:text-slate-400">3 Personel</span>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- KONTEN STRUKTUR -->
-        <div class="p-4 sm:p-5 space-y-4">
-
-            <!-- Filter Organ & Pencarian -->
-            <div class="space-y-2.5">
-                <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar" id="filter-tabs">
-                    <button type="button" data-filter="ALL" class="filter-btn shrink-0 px-3 py-1.5 rounded-full text-[10.5px] font-bold bg-emerald-400 text-slate-950 transition-all">
-                        Semua Organ
-                    </button>
-                    <button type="button" data-filter="PEMBINA" class="filter-btn shrink-0 px-3 py-1.5 rounded-full text-[10.5px] font-bold bg-slate-100 dark:bg-[#161f30] text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 transition-all">
-                        Pembina (2)
-                    </button>
-                    <button type="button" data-filter="PENGURUS" class="filter-btn shrink-0 px-3 py-1.5 rounded-full text-[10.5px] font-bold bg-slate-100 dark:bg-[#161f30] text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 transition-all">
-                        Pengurus (5)
-                    </button>
-                    <button type="button" data-filter="PENGAWAS" class="filter-btn shrink-0 px-3 py-1.5 rounded-full text-[10.5px] font-bold bg-slate-100 dark:bg-[#161f30] text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 transition-all">
-                        Pengawas (3)
-                    </button>
-                    <button type="button" data-filter="PENDIRI" class="filter-btn shrink-0 px-3 py-1.5 rounded-full text-[10.5px] font-bold bg-slate-100 dark:bg-[#161f30] text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 transition-all">
-                        Pendiri (10)
-                    </button>
-                </div>
-
-                <div class="relative">
-                    <input
-                        id="search-input"
-                        type="text"
-                        placeholder="Cari nama, jabatan, atau NIK..."
-                        class="w-full pl-8 pr-3 py-2 rounded-xl text-[11.5px] bg-slate-50 dark:bg-[#161f30] text-slate-900 dark:text-white placeholder-slate-400 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-emerald-400"
-                    >
-                    <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
+                    <div id="hierarki-pengawas" class="space-y-2.5"></div>
                 </div>
             </div>
 
-            <!-- Daftar Struktur Dinamis -->
-            <div id="struktur-container" class="space-y-4"></div>
-
-            <!-- Catatan Legalitas Footer -->
-            <div class="pt-3 border-t border-slate-200/80 dark:border-slate-800/80 text-[10px] text-slate-500 dark:text-slate-400 space-y-1">
-                <p>Daftar Yayasan: <span class="font-semibold text-slate-700 dark:text-slate-300">AHU-0036477.AH.01.12.Tahun 2026</span></p>
-                <p>Ditetapkan & Dicetak: <span class="font-semibold text-slate-700 dark:text-slate-300">12 Oktober 2026</span> • a.n. Menteri Hukum RI (Dirjen AHU — Widodo)</p>
+            <!-- Baris 2: Pengurus Yayasan -->
+            <div class="mt-4 rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-[10.5px] font-extrabold uppercase tracking-wider text-emerald-500">Organ Pengurus</span>
+                    <span class="text-[10.5px] font-semibold text-slate-500 dark:text-slate-400">5 Personel</span>
+                </div>
+                <div id="hierarki-pengurus" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5"></div>
             </div>
-        </div>
-    </main>
+
+            <!-- Baris 3: Pendiri Yayasan -->
+            <div class="mt-4 rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-[10.5px] font-extrabold uppercase tracking-wider text-purple-500 dark:text-purple-400">Pendiri Yayasan</span>
+                    <span class="text-[10.5px] font-semibold text-slate-500 dark:text-slate-400">10 Pendiri</span>
+                </div>
+                <div id="hierarki-pendiri" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5"></div>
+            </div>
+        </section>
+
+        <!-- DAFTAR KARTU PROFIL DETAIL -->
+        <section id="daftar-detail" class="space-y-7">
+            <!-- Section Pembina -->
+            <div id="section-pembina" class="org-section">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-[14px] sm:text-[15px] font-extrabold text-slate-900 dark:text-white">Susunan Pembina Yayasan</h3>
+                    <span class="text-[11px] font-semibold text-amber-500">Pembina</span>
+                </div>
+                <div id="cards-pembina" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5"></div>
+            </div>
+
+            <!-- Section Pengurus -->
+            <div id="section-pengurus" class="org-section">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-[14px] sm:text-[15px] font-extrabold text-slate-900 dark:text-white">Susunan Pengurus Yayasan</h3>
+                    <span class="text-[11px] font-semibold text-emerald-500">Pengurus</span>
+                </div>
+                <div id="cards-pengurus" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5"></div>
+            </div>
+
+            <!-- Section Pengawas -->
+            <div id="section-pengawas" class="org-section">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-[14px] sm:text-[15px] font-extrabold text-slate-900 dark:text-white">Susunan Pengawas Yayasan</h3>
+                    <span class="text-[11px] font-semibold text-sky-500">Pengawas</span>
+                </div>
+                <div id="cards-pengawas" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5"></div>
+            </div>
+
+            <!-- Section Pendiri -->
+            <div id="section-pendiri" class="org-section">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-[14px] sm:text-[15px] font-extrabold text-slate-900 dark:text-white">Daftar Pendiri Yayasan</h3>
+                    <span class="text-[11px] font-semibold text-purple-500 dark:text-purple-400">Pendiri</span>
+                </div>
+                <div id="cards-pendiri" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5"></div>
+            </div>
+        </section>
+    </div>
 
     <script>
-        const DATA_ORGAN_YAYASAN = [
+        /**
+         * DATA ACUAN STRUKTUR ORGANISASI & PENDIRI YAYASAN
+         * Catatan: Data NIK/KTP/Passport sengaja tidak disimpan dan tidak ditampilkan.
+         */
+        const PENDIRI_YAYASAN = [
+            {
+                id: 'pendiri-1',
+                name: 'ABRAHAM ROBY',
+                role: 'Pendiri Yayasan',
+                organ: 'Pendiri',
+                photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pendiri-2',
+                name: 'ANDY RAMAKUSUMA',
+                role: 'Pendiri Yayasan',
+                organ: 'Pendiri',
+                photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pendiri-3',
+                name: 'ARI TRIANA',
+                role: 'Pendiri Yayasan',
+                organ: 'Pendiri',
+                photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pendiri-4',
+                name: 'IMELDA TOBING',
+                role: 'Pendiri Yayasan',
+                organ: 'Pendiri',
+                photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pendiri-5',
+                name: 'IWAN SATRIAWAN, SE',
+                role: 'Pendiri Yayasan',
+                organ: 'Pendiri',
+                photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pendiri-6',
+                name: 'NANDANG SEKTIYO',
+                role: 'Pendiri Yayasan',
+                organ: 'Pendiri',
+                photo: 'https://i.pinimg.com/736x/f9/cf/5d/f9cf5d70522a5cbb600c395692c9ad2d.jpg'
+            },
+            {
+                id: 'pendiri-7',
+                name: 'NUR KHOLIS',
+                role: 'Pendiri Yayasan',
+                organ: 'Pendiri',
+                photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pendiri-8',
+                name: 'OKA ANDREAS OPIT',
+                role: 'Pendiri Yayasan',
+                organ: 'Pendiri',
+                photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pendiri-9',
+                name: 'ROBI DARWIS',
+                role: 'Pendiri Yayasan',
+                organ: 'Pendiri',
+                photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pendiri-10',
+                name: 'SIMON TOBING',
+                role: 'Pendiri Yayasan',
+                organ: 'Pendiri',
+                photo: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80'
+            }
+        ];
+
+        const SUSUNAN_ORGAN = [
             // PEMBINA
-            { organ: 'PEMBINA', jabatan: 'Ketua', nama: 'NANDANG SEKTIYO', nik: '3175051112750010' },
-            { organ: 'PEMBINA', jabatan: 'Anggota', nama: 'IWAN SATRIAWAN, SE', nik: '3506162109720002' },
+            {
+                id: 'pembina-ketua',
+                name: 'NANDANG SEKTIYO',
+                organ: 'PEMBINA',
+                role: 'KETUA',
+                photo: 'https://i.pinimg.com/736x/f9/cf/5d/f9cf5d70522a5cbb600c395692c9ad2d.jpg'
+            },
+            {
+                id: 'pembina-anggota',
+                name: 'IWAN SATRIAWAN, SE',
+                organ: 'PEMBINA',
+                role: 'ANGGOTA',
+                photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'
+            },
 
             // PENGURUS
-            { organ: 'PENGURUS', jabatan: 'Ketua', nama: 'ABRAHAM ROBY', nik: '3275021307880024' },
-            { organ: 'PENGURUS', jabatan: 'Sekretaris Umum', nama: 'OKA ANDREAS OPIT', nik: '3275030510830018' },
-            { organ: 'PENGURUS', jabatan: 'Sekretaris', nama: 'SIMON TOBING', nik: '3216021509800015' },
-            { organ: 'PENGURUS', jabatan: 'Bendahara Umum', nama: 'IMELDA TOBING', nik: '3216024706790010' },
-            { organ: 'PENGURUS', jabatan: 'Bendahara', nama: 'ARI TRIANA', nik: '3202336202790004' },
+            {
+                id: 'pengurus-ketua',
+                name: 'ABRAHAM ROBY',
+                organ: 'PENGURUS',
+                role: 'KETUA',
+                photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pengurus-sekum',
+                name: 'OKA ANDREAS OPIT',
+                organ: 'PENGURUS',
+                role: 'SEKRETARIS UMUM',
+                photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pengurus-sek',
+                name: 'SIMON TOBING',
+                organ: 'PENGURUS',
+                role: 'SEKRETARIS',
+                photo: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pengurus-bendum',
+                name: 'IMELDA TOBING',
+                organ: 'PENGURUS',
+                role: 'BENDAHARA UMUM',
+                photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pengurus-bend',
+                name: 'ARI TRIANA',
+                organ: 'PENGURUS',
+                role: 'BENDAHARA',
+                photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80'
+            },
 
             // PENGAWAS
-            { organ: 'PENGAWAS', jabatan: 'Ketua', nama: 'NUR KHOLIS', nik: '3202330503760004' },
-            { organ: 'PENGAWAS', jabatan: 'Anggota', nama: 'ANDY RAMAKUSUMA', nik: '3172022707800022' },
-            { organ: 'PENGAWAS', jabatan: 'Anggota', nama: 'ROBI DARWIS', nik: '3216030303900002' }
+            {
+                id: 'pengawas-ketua',
+                name: 'NUR KHOLIS',
+                organ: 'PENGAWAS',
+                role: 'KETUA',
+                photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pengawas-anggota-1',
+                name: 'ANDY RAMAKUSUMA',
+                organ: 'PENGAWAS',
+                role: 'ANGGOTA',
+                photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80'
+            },
+            {
+                id: 'pengawas-anggota-2',
+                name: 'ROBI DARWIS',
+                organ: 'PENGAWAS',
+                role: 'ANGGOTA',
+                photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'
+            }
         ];
-
-        const DATA_PENDIRI_YAYASAN = [
-            { nama: 'ABRAHAM ROBY', nik: '3275021307880024' },
-            { nama: 'ANDY RAMAKUSUMA', nik: '3172022707800022' },
-            { nama: 'ARI TRIANA', nik: '3202336202790004' },
-            { nama: 'IMELDA TOBING', nik: '3216024706790010' },
-            { nama: 'IWAN SATRIAWAN, SE', nik: '3506162109720002' },
-            { nama: 'NANDANG SEKTIYO', nik: '3175051112750010' },
-            { nama: 'NUR KHOLIS', nik: '3202330503760004' },
-            { nama: 'OKA ANDREAS OPIT', nik: '3275030510830018' },
-            { nama: 'ROBI DARWIS', nik: '3216030303900002' },
-            { nama: 'SIMON TOBING', nik: '3216021509800015' }
-        ];
-
-        let activeFilter = 'ALL';
-        let searchQuery = '';
-        let toastTimer = null;
 
         const htmlEl = document.documentElement;
-        document.getElementById('theme-toggle').addEventListener('click', () => {
+        const themeToggleBtn = document.getElementById('theme-toggle');
+
+        themeToggleBtn.addEventListener('click', () => {
             if (htmlEl.classList.contains('dark')) {
                 htmlEl.classList.remove('dark');
                 localStorage.setItem('skn_theme', 'light');
@@ -197,182 +363,85 @@
             }
         });
 
-        function tampilkanToast(pesan) {
-            const toast = document.getElementById('toast-notification');
-            document.getElementById('toast-message').textContent = pesan;
-            toast.classList.remove('opacity-0', 'translate-y-3', 'pointer-events-none');
-            toast.classList.add('opacity-100', 'translate-y-0');
-            clearTimeout(toastTimer);
-            toastTimer = setTimeout(() => {
-                toast.classList.remove('opacity-100', 'translate-y-0');
-                toast.classList.add('opacity-0', 'translate-y-3', 'pointer-events-none');
-            }, 2000);
+        function badgeStyle(organ) {
+            if (organ === 'PEMBINA') return 'bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/30';
+            if (organ === 'PENGURUS') return 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30';
+            if (organ === 'PENGAWAS') return 'bg-sky-500/15 text-sky-600 dark:text-sky-400 border-sky-500/30';
+            return 'bg-purple-500/15 text-purple-600 dark:text-purple-400 border-purple-500/30';
         }
 
-        function salinNik(nik, nama) {
-            const el = document.createElement('textarea');
-            el.value = nik;
-            el.style.position = 'fixed';
-            el.style.opacity = '0';
-            document.body.appendChild(el);
-            el.select();
-            try {
-                document.execCommand('copy');
-                tampilkanToast(`NIK ${nama} disalin`);
-            } catch (e) {}
-            document.body.removeChild(el);
-        }
-
-        function cocokPencarian(teksList) {
-            if (!searchQuery.trim()) return true;
-            const q = searchQuery.toLowerCase().trim();
-            return teksList.some(t => String(t).toLowerCase().includes(q));
-        }
-
-        function renderCardOrgan(item) {
-            const badgeColor =
-                item.organ === 'PEMBINA'
-                    ? 'bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/30'
-                    : item.organ === 'PENGURUS'
-                    ? 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30'
-                    : 'bg-sky-500/15 text-sky-600 dark:text-sky-400 border-sky-500/30';
-
+        function buatItemHierarki(person) {
             return `
-                <div class="flex items-center justify-between gap-2.5 p-3 rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800">
+                <div class="flex items-center gap-2.5 p-2 rounded-xl bg-white dark:bg-[#0f1624] border border-slate-200/70 dark:border-slate-800/90">
+                    <img
+                        src="${person.photo}"
+                        onerror="this.onerror=null; this.src='https://placehold.co/120x120/0f1624/10b981?text=YSKN';"
+                        alt="${person.name}"
+                        class="w-9 h-9 rounded-full object-cover shrink-0 border border-emerald-400/40"
+                    >
                     <div class="min-w-0 flex-1">
-                        <div class="flex items-center gap-1.5 flex-wrap">
-                            <span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase border ${badgeColor}">
-                                ${item.organ}
-                            </span>
-                            <span class="text-[10.5px] font-bold text-slate-700 dark:text-slate-200">
-                                ${item.jabatan}
-                            </span>
-                        </div>
-                        <p class="text-[12px] font-extrabold text-slate-900 dark:text-white truncate mt-1">
-                            ${item.nama}
-                        </p>
-                        <p class="text-[10px] font-mono text-slate-500 dark:text-slate-400 mt-0.5">
-                            NIK: ${item.nik}
-                        </p>
+                        <p class="text-[11.5px] font-bold text-slate-900 dark:text-white truncate">${person.name}</p>
+                        <p class="text-[10px] font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400 truncate">${person.role}</p>
                     </div>
-                    <button
-                        type="button"
-                        onclick="salinNik('${item.nik}', '${item.nama.replace(/'/g, "\\'")}')"
-                        class="shrink-0 px-2.5 py-1.5 rounded-xl text-[10px] font-bold bg-white dark:bg-[#0f1624] hover:bg-emerald-400 hover:text-slate-950 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition-all active:scale-95">
-                        Salin NIK
-                    </button>
                 </div>
             `;
         }
 
-        function renderCardPendiri(item, index) {
+        function buatKartuDetail(person) {
             return `
-                <div class="flex items-center justify-between gap-2.5 p-2.5 rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800">
-                    <div class="flex items-center gap-2.5 min-w-0 flex-1">
-                        <span class="w-6 h-6 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 text-[10px] font-extrabold flex items-center justify-center shrink-0">
-                            ${index + 1}
-                        </span>
-                        <div class="min-w-0">
-                            <p class="text-[11.5px] font-bold text-slate-900 dark:text-white truncate">
-                                ${item.nama}
-                            </p>
-                            <p class="text-[10px] font-mono text-slate-500 dark:text-slate-400">
-                                NIK: ${item.nik}
-                            </p>
-                        </div>
+                <article class="flex items-center gap-3 p-3.5 rounded-2xl bg-white dark:bg-[#0f1624] border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:border-emerald-400/50 transition-all">
+                    <div class="w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-cyan-400 via-emerald-400 to-lime-300 shrink-0">
+                        <img
+                            src="${person.photo}"
+                            onerror="this.onerror=null; this.src='https://placehold.co/160x160/0f1624/10b981?text=YSKN';"
+                            alt="${person.name}"
+                            class="w-full h-full rounded-full object-cover border-2 border-white dark:border-[#0f1624] bg-slate-800"
+                        >
                     </div>
-                    <button
-                        type="button"
-                        onclick="salinNik('${item.nik}', '${item.nama.replace(/'/g, "\\'")}')"
-                        class="shrink-0 px-2.5 py-1 rounded-xl text-[10px] font-bold bg-white dark:bg-[#0f1624] hover:bg-emerald-400 hover:text-slate-950 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition-all active:scale-95">
-                        Salin NIK
-                    </button>
-                </div>
+                    <div class="min-w-0 flex-1">
+                        <span class="inline-block px-2 py-0.5 rounded-full text-[9.5px] font-bold uppercase border ${badgeStyle(person.organ)}">
+                            ${person.organ}
+                        </span>
+                        <h4 class="text-[12.5px] sm:text-[13px] font-extrabold text-slate-900 dark:text-white truncate mt-1">${person.name}</h4>
+                        <p class="text-[11px] font-semibold text-slate-600 dark:text-slate-300 truncate">${person.role}</p>
+                    </div>
+                </article>
             `;
         }
 
         function renderStruktur() {
-            const container = document.getElementById('struktur-container');
-            let html = '';
+            const pembina = SUSUNAN_ORGAN.filter(p => p.organ === 'PEMBINA');
+            const pengurus = SUSUNAN_ORGAN.filter(p => p.organ === 'PENGURUS');
+            const pengawas = SUSUNAN_ORGAN.filter(p => p.organ === 'PENGAWAS');
 
-            const kelompokOrgan = [
-                { key: 'PEMBINA', judul: '3a. Organ Pembina Yayasan' },
-                { key: 'PENGURUS', judul: '3b. Organ Pengurus Yayasan' },
-                { key: 'PENGAWAS', judul: '3c. Organ Pengawas Yayasan' }
-            ];
+            document.getElementById('hierarki-pembina').innerHTML = pembina.map(buatItemHierarki).join('');
+            document.getElementById('hierarki-pengawas').innerHTML = pengawas.map(buatItemHierarki).join('');
+            document.getElementById('hierarki-pengurus').innerHTML = pengurus.map(buatItemHierarki).join('');
+            document.getElementById('hierarki-pendiri').innerHTML = PENDIRI_YAYASAN.map(buatItemHierarki).join('');
 
-            kelompokOrgan.forEach(group => {
-                if (activeFilter !== 'ALL' && activeFilter !== group.key) return;
-                const items = DATA_ORGAN_YAYASAN.filter(
-                    d => d.organ === group.key && cocokPencarian([d.nama, d.jabatan, d.organ, d.nik])
-                );
-                if (items.length === 0) return;
-
-                html += `
-                    <section class="space-y-2">
-                        <div class="flex items-center justify-between">
-                            <h2 class="text-[11.5px] font-extrabold uppercase tracking-wide text-slate-800 dark:text-slate-200">
-                                ${group.judul}
-                            </h2>
-                            <span class="text-[10px] font-semibold text-slate-400">${items.length} orang</span>
-                        </div>
-                        <div class="space-y-2">
-                            ${items.map(renderCardOrgan).join('')}
-                        </div>
-                    </section>
-                `;
-            });
-
-            if (activeFilter === 'ALL' || activeFilter === 'PENDIRI') {
-                const pendiriFiltered = DATA_PENDIRI_YAYASAN
-                    .map((p, idx) => ({ ...p, noUrut: idx }))
-                    .filter(p => cocokPencarian([p.nama, p.nik]));
-
-                if (pendiriFiltered.length > 0) {
-                    html += `
-                        <section class="space-y-2">
-                            <div class="flex items-center justify-between">
-                                <h2 class="text-[11.5px] font-extrabold uppercase tracking-wide text-amber-600 dark:text-amber-400">
-                                    2. Pendiri Yayasan
-                                </h2>
-                                <span class="text-[10px] font-semibold text-slate-400">${pendiriFiltered.length} pendiri</span>
-                            </div>
-                            <div class="space-y-1.5">
-                                ${pendiriFiltered.map(p => renderCardPendiri(p, p.noUrut)).join('')}
-                            </div>
-                        </section>
-                    `;
-                }
-            }
-
-            if (!html) {
-                html = `
-                    <div class="py-8 text-center text-[11.5px] text-slate-500 dark:text-slate-400">
-                        Data tidak ditemukan untuk filter atau kata kunci tersebut.
-                    </div>
-                `;
-            }
-
-            container.innerHTML = html;
+            document.getElementById('cards-pembina').innerHTML = pembina.map(buatKartuDetail).join('');
+            document.getElementById('cards-pengurus').innerHTML = pengurus.map(buatKartuDetail).join('');
+            document.getElementById('cards-pengawas').innerHTML = pengawas.map(buatKartuDetail).join('');
+            document.getElementById('cards-pendiri').innerHTML = PENDIRI_YAYASAN.map(buatKartuDetail).join('');
         }
 
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                activeFilter = btn.dataset.filter;
-                document.querySelectorAll('.filter-btn').forEach(b => {
-                    const aktif = b.dataset.filter === activeFilter;
-                    b.className = aktif
-                        ? 'filter-btn shrink-0 px-3 py-1.5 rounded-full text-[10.5px] font-bold bg-emerald-400 text-slate-950 transition-all'
-                        : 'filter-btn shrink-0 px-3 py-1.5 rounded-full text-[10.5px] font-bold bg-slate-100 dark:bg-[#161f30] text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 transition-all';
-                });
-                renderStruktur();
+        function setFilter(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                const active = btn.dataset.filter === category;
+                btn.className = active
+                    ? 'filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-emerald-400 text-slate-950 shadow-sm transition-all'
+                    : 'filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all';
             });
-        });
 
-        document.getElementById('search-input').addEventListener('input', e => {
-            searchQuery = e.target.value;
-            renderStruktur();
-        });
+            document.querySelectorAll('.org-section').forEach(sec => {
+                if (category === 'all') {
+                    sec.classList.remove('hidden');
+                } else {
+                    const match = sec.id === `section-${category}`;
+                    sec.classList.toggle('hidden', !match);
+                }
+            });
+        }
 
         window.addEventListener('DOMContentLoaded', () => {
             try {
