@@ -86,27 +86,27 @@
         </header>
 
         <!-- NAVIGASI FILTER BAGIAN -->
-        <nav aria-label="Filter Struktur Organisasi" class="flex flex-wrap items-center gap-2 mb-6">
-            <button type="button" data-filter="all" onclick="setFilter('all')" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-emerald-400 text-slate-950 shadow-sm transition-all">
+        <nav id="filter-nav" aria-label="Filter Struktur Organisasi" class="flex flex-wrap items-center gap-2 mb-6">
+            <button type="button" data-filter="all" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-emerald-400 text-slate-950 shadow-sm transition-all cursor-pointer">
                 Semua Bagian
             </button>
-            <button type="button" data-filter="pendiri" onclick="setFilter('pendiri')" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all">
+            <button type="button" data-filter="pendiri" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all cursor-pointer">
                 Pendiri Yayasan
             </button>
-            <button type="button" data-filter="pembina" onclick="setFilter('pembina')" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all">
+            <button type="button" data-filter="pembina" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all cursor-pointer">
                 Pembina
             </button>
-            <button type="button" data-filter="pengurus" onclick="setFilter('pengurus')" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all">
+            <button type="button" data-filter="pengurus" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all cursor-pointer">
                 Pengurus
             </button>
-            <button type="button" data-filter="pengawas" onclick="setFilter('pengawas')" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all">
+            <button type="button" data-filter="pengawas" class="filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all cursor-pointer">
                 Pengawas
             </button>
         </nav>
 
         <!-- BAGAN STRUKTUR ORGANISASI (HIERARKI VISUAL) -->
         <section id="bagan-hierarki" class="bg-white dark:bg-[#0f1624] rounded-3xl border border-slate-200/80 dark:border-slate-800/80 p-4 sm:p-6 shadow-lg mb-7">
-            <div class="flex items-center justify-between gap-2 pb-4 border-b border-slate-200/80 dark:border-slate-800">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-200/80 dark:border-slate-800">
                 <div>
                     <p class="text-[10px] font-bold uppercase tracking-[0.08em] text-emerald-500">Bagan Hierarki</p>
                     <h2 class="text-[15px] sm:text-[17px] font-extrabold text-slate-900 dark:text-white mt-0.5">Susunan Organ & Pendiri Yayasan</h2>
@@ -118,7 +118,7 @@
 
             <!-- Baris 1: Pembina & Pengawas -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
-                <div class="rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 p-4">
+                <div id="hierarki-box-pembina" class="hierarki-box rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 p-4">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-[10.5px] font-extrabold uppercase tracking-wider text-amber-500">Organ Pembina</span>
                         <span class="text-[10.5px] font-semibold text-slate-500 dark:text-slate-400">2 Personel</span>
@@ -126,7 +126,7 @@
                     <div id="hierarki-pembina" class="space-y-2.5"></div>
                 </div>
 
-                <div class="rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 p-4">
+                <div id="hierarki-box-pengawas" class="hierarki-box rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 p-4">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-[10.5px] font-extrabold uppercase tracking-wider text-sky-500">Organ Pengawas</span>
                         <span class="text-[10.5px] font-semibold text-slate-500 dark:text-slate-400">3 Personel</span>
@@ -136,7 +136,7 @@
             </div>
 
             <!-- Baris 2: Pengurus Yayasan -->
-            <div class="mt-4 rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 p-4">
+            <div id="hierarki-box-pengurus" class="hierarki-box mt-4 rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 p-4">
                 <div class="flex items-center justify-between mb-3">
                     <span class="text-[10.5px] font-extrabold uppercase tracking-wider text-emerald-500">Organ Pengurus</span>
                     <span class="text-[10.5px] font-semibold text-slate-500 dark:text-slate-400">5 Personel</span>
@@ -145,7 +145,7 @@
             </div>
 
             <!-- Baris 3: Pendiri Yayasan -->
-            <div class="mt-4 rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 p-4">
+            <div id="hierarki-box-pendiri" class="hierarki-box mt-4 rounded-2xl bg-slate-50 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 p-4">
                 <div class="flex items-center justify-between mb-3">
                     <span class="text-[10.5px] font-extrabold uppercase tracking-wider text-purple-500 dark:text-purple-400">Pendiri Yayasan</span>
                     <span class="text-[10.5px] font-semibold text-slate-500 dark:text-slate-400">10 Pendiri</span>
@@ -192,6 +192,31 @@
                 <div id="cards-pendiri" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5"></div>
             </div>
         </section>
+    </div>
+
+    <!-- MODAL ZOOM FOTO PROFIL (DINAMIS 30% LAYAR PONSEL) -->
+    <div id="photo-zoom-modal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4 transition-opacity duration-200">
+        <div id="photo-zoom-card" class="relative bg-white dark:bg-[#0f1624] rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl p-3 flex flex-col items-center justify-between transition-all duration-200">
+            <button
+                id="close-zoom-btn"
+                type="button"
+                aria-label="Tutup Zoom Foto"
+                class="self-end w-7 h-7 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-rose-500 hover:text-white flex items-center justify-center text-xs font-bold transition-colors cursor-pointer">
+                ✕
+            </button>
+            <div class="w-full flex-1 flex items-center justify-center overflow-hidden my-1">
+                <img
+                    id="zoomed-photo-img"
+                    src=""
+                    alt=""
+                    class="w-full h-full object-cover rounded-2xl border-2 border-emerald-400/60 shadow-md"
+                >
+            </div>
+            <div class="w-full text-center pt-1">
+                <p id="zoomed-photo-name" class="text-[11px] font-extrabold text-slate-900 dark:text-white truncate"></p>
+                <p id="zoomed-photo-role" class="text-[9.5px] font-semibold uppercase text-emerald-500 truncate"></p>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -352,7 +377,16 @@
 
         const htmlEl = document.documentElement;
         const themeToggleBtn = document.getElementById('theme-toggle');
+        const zoomModal = document.getElementById('photo-zoom-modal');
+        const zoomCard = document.getElementById('photo-zoom-card');
+        const zoomedImg = document.getElementById('zoomed-photo-img');
+        const zoomedName = document.getElementById('zoomed-photo-name');
+        const zoomedRole = document.getElementById('zoomed-photo-role');
+        const closeZoomBtn = document.getElementById('close-zoom-btn');
 
+        let currentFilter = 'all';
+
+        // Toggle Tema
         themeToggleBtn.addEventListener('click', () => {
             if (htmlEl.classList.contains('dark')) {
                 htmlEl.classList.remove('dark');
@@ -370,14 +404,25 @@
             return 'bg-purple-500/15 text-purple-600 dark:text-purple-400 border-purple-500/30';
         }
 
+        function escapeAttr(str) {
+            return String(str).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
         function buatItemHierarki(person) {
+            const safeName = escapeAttr(person.name);
+            const safeRole = escapeAttr(person.role);
+            const safePhoto = escapeAttr(person.photo);
             return `
                 <div class="flex items-center gap-2.5 p-2 rounded-xl bg-white dark:bg-[#0f1624] border border-slate-200/70 dark:border-slate-800/90">
                     <img
-                        src="${person.photo}"
+                        src="${safePhoto}"
                         onerror="this.onerror=null; this.src='https://placehold.co/120x120/0f1624/10b981?text=YSKN';"
-                        alt="${person.name}"
-                        class="w-9 h-9 rounded-full object-cover shrink-0 border border-emerald-400/40"
+                        alt="${safeName}"
+                        data-zoom-photo="true"
+                        data-name="${safeName}"
+                        data-role="${safeRole}"
+                        title="Klik untuk memperbesar foto"
+                        class="w-9 h-9 rounded-full object-cover shrink-0 border border-emerald-400/40 cursor-zoom-in hover:scale-105 transition-transform"
                     >
                     <div class="min-w-0 flex-1">
                         <p class="text-[11.5px] font-bold text-slate-900 dark:text-white truncate">${person.name}</p>
@@ -388,14 +433,21 @@
         }
 
         function buatKartuDetail(person) {
+            const safeName = escapeAttr(person.name);
+            const safeRole = escapeAttr(person.role);
+            const safePhoto = escapeAttr(person.photo);
             return `
                 <article class="flex items-center gap-3 p-3.5 rounded-2xl bg-white dark:bg-[#0f1624] border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:border-emerald-400/50 transition-all">
                     <div class="w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-cyan-400 via-emerald-400 to-lime-300 shrink-0">
                         <img
-                            src="${person.photo}"
+                            src="${safePhoto}"
                             onerror="this.onerror=null; this.src='https://placehold.co/160x160/0f1624/10b981?text=YSKN';"
-                            alt="${person.name}"
-                            class="w-full h-full rounded-full object-cover border-2 border-white dark:border-[#0f1624] bg-slate-800"
+                            alt="${safeName}"
+                            data-zoom-photo="true"
+                            data-name="${safeName}"
+                            data-role="${safeRole}"
+                            title="Klik untuk memperbesar foto"
+                            class="w-full h-full rounded-full object-cover border-2 border-white dark:border-[#0f1624] bg-slate-800 cursor-zoom-in hover:scale-105 transition-transform"
                         >
                     </div>
                     <div class="min-w-0 flex-1">
@@ -425,23 +477,98 @@
             document.getElementById('cards-pendiri').innerHTML = PENDIRI_YAYASAN.map(buatKartuDetail).join('');
         }
 
-        function setFilter(category) {
+        function applyFilter(category) {
+            currentFilter = category;
+
+            // Perbarui status aktif tombol filter
             document.querySelectorAll('.filter-btn').forEach(btn => {
-                const active = btn.dataset.filter === category;
-                btn.className = active
-                    ? 'filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-emerald-400 text-slate-950 shadow-sm transition-all'
-                    : 'filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all';
+                const isActive = btn.dataset.filter === category;
+                btn.className = isActive
+                    ? 'filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-emerald-400 text-slate-950 shadow-sm transition-all cursor-pointer'
+                    : 'filter-btn px-3.5 py-1.5 rounded-full text-[11.5px] font-bold bg-white dark:bg-[#0f1624] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-emerald-400/50 transition-all cursor-pointer';
+                btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
             });
 
+            // Filter bagian detail di bawah
             document.querySelectorAll('.org-section').forEach(sec => {
-                if (category === 'all') {
-                    sec.classList.remove('hidden');
-                } else {
-                    const match = sec.id === `section-${category}`;
-                    sec.classList.toggle('hidden', !match);
-                }
+                const shouldShow = category === 'all' || sec.id === `section-${category}`;
+                sec.classList.toggle('hidden', !shouldShow);
+            });
+
+            // Filter kotak bagan hierarki di atas agar ikut menyesuaikan secara otomatis
+            document.querySelectorAll('.hierarki-box').forEach(box => {
+                const shouldShow = category === 'all' || box.id === `hierarki-box-${category}`;
+                box.classList.toggle('hidden', !shouldShow);
             });
         }
+
+        // Event delegation untuk tombol filter
+        document.getElementById('filter-nav').addEventListener('click', (event) => {
+            const btn = event.target.closest('.filter-btn');
+            if (!btn) return;
+            const filterVal = btn.getAttribute('data-filter') || 'all';
+            applyFilter(filterVal);
+        });
+
+        // Hitung ukuran zoom dinamis 30% dari tampilan layar ponsel (viewport) secara otomatis
+        function updateZoomDimensions() {
+            const vw = window.innerWidth;
+            const vh = window.innerHeight;
+            // Skala 30% dari lebar & tinggi layar (dengan batas minimal agar tetap jelas di layar kecil)
+            const targetWidth = Math.max(130, Math.round(vw * 0.30));
+            const targetHeight = Math.max(150, Math.round(vh * 0.30));
+
+            zoomCard.style.width = `${targetWidth}px`;
+            zoomCard.style.height = `${targetHeight}px`;
+        }
+
+        function openPhotoZoom(src, name, role) {
+            zoomedImg.src = src;
+            zoomedImg.alt = name;
+            zoomedName.textContent = name;
+            zoomedRole.textContent = role;
+            updateZoomDimensions();
+
+            zoomModal.classList.remove('hidden');
+            zoomModal.classList.add('flex');
+        }
+
+        function closePhotoZoom() {
+            zoomModal.classList.add('hidden');
+            zoomModal.classList.remove('flex');
+        }
+
+        // Event delegation untuk klik foto profil mana pun
+        document.addEventListener('click', (event) => {
+            const photoEl = event.target.closest('img[data-zoom-photo="true"]');
+            if (photoEl) {
+                const src = photoEl.currentSrc || photoEl.src;
+                const name = photoEl.getAttribute('data-name') || photoEl.alt || 'Pengurus Yayasan';
+                const role = photoEl.getAttribute('data-role') || '';
+                openPhotoZoom(src, name, role);
+                return;
+            }
+
+            // Tutup modal jika klik di luar kartu zoom
+            if (event.target === zoomModal) {
+                closePhotoZoom();
+            }
+        });
+
+        closeZoomBtn.addEventListener('click', closePhotoZoom);
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !zoomModal.classList.contains('hidden')) {
+                closePhotoZoom();
+            }
+        });
+
+        // Menyesuaikan ukuran zoom 30% secara dinamis saat orientasi/ukuran layar berubah
+        window.addEventListener('resize', () => {
+            if (!zoomModal.classList.contains('hidden')) {
+                updateZoomDimensions();
+            }
+        });
 
         window.addEventListener('DOMContentLoaded', () => {
             try {
@@ -450,6 +577,7 @@
                 }
             } catch (e) {}
             renderStruktur();
+            applyFilter('all');
         });
     </script>
 </body>
